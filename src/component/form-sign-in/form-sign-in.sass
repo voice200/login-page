@@ -1,12 +1,32 @@
-.form-sign-in_container
-  height: 100%
-  background: rgba(0,0,0, .6)
-  display: flex
-  flex-direction: column
-  align-items: center
-  @media screen and (min-width: 1224px)
+.form-sign-in
+  &_container
+    height: 100%
+    background: rgba(0,0,0, .6)
+    display: flex
+    flex-direction: column
+    align-items: center
+    &_content
+      @media screen and (min-width: 1024px)
+        width: 400px
+
+    @media screen and (min-width: 1024px)
       padding-top: 113px
       width: 45%
-  @media screen and (max-width: 1223px)
-    width: 50%
+    @media screen and (max-width: 1023px)
+      width: 50%
+
+.alert_container_content
+  display: flex
+  flex-direction: column
+  background: #fff
+  color: #555
+  font-size: 16px
+  line-height: 1.5
+  padding: 13px 19px 26px
+
+.alert_content
+  margin-bottom: 15px
+
+
+
 

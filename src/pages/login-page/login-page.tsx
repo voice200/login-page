@@ -1,8 +1,7 @@
-import React, { FC } from "react"
-import './login-page.sass'
-import Layout from "../../component/layout"
+import React, { FC } from "react";
+import "./login-page.sass";
+import Layout from "../../component/layout";
 import FormSignIn from "../../component/form-sign-in";
-
 
 const LoginPage : FC = () => {
 
