@@ -4,7 +4,8 @@ const initialState: AuthState = {
   userName: '',
   email: ''
 }
-export default function (state = initialState, action: AuthAction) : AuthState {
+
+export default function reducer (state = initialState, action: AuthAction) : AuthState {
   switch (action.type) {
     case AuthActionTypes.SET_EMAIL:
      return {...state, email: action.payload}

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import "./input-text.sass";
 import { InputType, InputTypesProps } from "../../types/componets/input-text-types";
 import cx from "classnames";
@@ -13,13 +13,22 @@ const InputText: FC <InputTypesProps> = (
     type,
     value,
     onChange,
-    autoComplete }) => {
+    autoComplete ,
+    needFocus}) => {
 
   const [showPassword, setShowPassword] = useState<boolean>(false)
+
+  const inputRef = useRef(null)
 
   const changeShowPassword = ():void =>{
     setShowPassword((state) => !state)
   }
+  useEffect(():void=>{
+    if (needFocus && inputRef){
+      // @ts-ignore
+      inputRef?.current.focus()
+    }
+  }, [needFocus])
 
   return (
     <div className={ cx(className.classContainer) }>
@@ -34,6 +43,7 @@ const InputText: FC <InputTypesProps> = (
         className={cx(className.classInput)}
         value={value}
         onChange={onChange}
+        ref={inputRef}
       />
       {
         type === InputType.password &&

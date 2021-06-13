@@ -6,7 +6,7 @@ const initialState: CommonState = {
 }
 
 
-export default function (state = initialState, action: CommonAction) : CommonState {
+export default function reducer (state = initialState, action: CommonAction) : CommonState {
   switch (action.type) {
     case CommonActionTypes.SET_LOADING:
       return {...state, loading: action.payload }

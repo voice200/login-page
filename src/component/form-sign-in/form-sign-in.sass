@@ -6,14 +6,29 @@
     flex-direction: column
     align-items: center
     &_content
-      @media screen and (min-width: 1024px)
+      @media screen and (min-width: 468px)
         width: 400px
+      @media screen and (max-width: 545px)
+        width: 100%
 
     @media screen and (min-width: 1024px)
       padding-top: 113px
       width: 45%
     @media screen and (max-width: 1023px)
+      padding-top: 80px
       width: 50%
+    @media screen and (max-width: 991px)
+      padding-top: 80px
+      width: 60%
+    @media screen and (max-width: 767px)
+      width: 75%
+      padding: 80px 30px 0
+    @media screen and (max-width: 545px)
+      width: 100%
+    @media screen and (max-width: 450px)
+      padding: 49px 20px 40px
+
+
 
 .alert_container_content
   display: flex

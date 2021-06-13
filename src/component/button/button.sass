@@ -34,7 +34,11 @@
   padding: 0
   border: none
   position: absolute
-  transform: translate(22rem, 2.5rem)
+  @media screen and (min-width: 451px)
+    transform: translate(22rem, 2.5rem)
+  @media screen and (max-width: 450px)
+    right: 2.5rem
+    transform: translateY(30px)
 
 .button-alert-submit
   width: 100px

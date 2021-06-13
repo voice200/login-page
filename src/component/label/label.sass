@@ -1,5 +1,11 @@
 .label_sign-in
-  transform: scale(1.19)
-  margin-left: 2rem
+  @media screen and (min-width: 451px)
+    transform: scale(1.19)
+  @media screen and (max-width: 450px)
+    transform: scale(1)
   &__position
-    margin: 31px 0 19.9px 2rem
+    @media screen and (min-width: 451px)
+      margin: 31px 0 19.9px 2rem
+    @media screen and (max-width: 450px)
+      margin: 27px 0 25px 0
+

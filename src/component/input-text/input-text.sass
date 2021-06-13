@@ -2,27 +2,42 @@
 
 .input-basic-sign-in
   width: 100%
-  height: 44px
   border-radius: 3px
   border: solid 1px #151515
   background: $input-sign-in-bg-color
   color: $input-sign-in-color
-  font-size: $input-sign-in-font-size
   outline: none
   -webkit-appearance: none
-  padding: 14.3px 13px 14.3px
   box-sizing: border-box
   font-family: $generalFont
   letter-spacing: normal
+  &:focus
+    border: solid 1px #888888
+    background: #6a6a6a
+  @media screen and (min-width: 451px)
+    font-size: $input-sign-in-font-size
+    height: 44px
+    padding: 13px
+  @media screen and (max-width: 450px)
+    height: 36px
+    padding: 9px
+    font-size: 16px
 
   &_position
-    margin-top: 9.5px
-    margin-bottom: 16.8px
+    @media screen and (min-width: 451px)
+      margin-top: 9.5px
+      margin-bottom: 16.8px
+    @media screen and (max-width: 450px)
+      margin-top: 7.6px
+      margin-bottom: 21px
 
 .label-basic-sign-in
-  font-size: $label-sign-in-font-size
   font-weight: normal
   color: $label-sign-in-color
+  @media screen and (min-width: 451px)
+    font-size: $label-sign-in-font-size
+  @media screen and (max-width: 450px)
+    font-size: 13px
 
 .container-basic-sign-in
   display: flex

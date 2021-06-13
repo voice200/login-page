@@ -7,17 +7,30 @@
   width: 100%
 
   .title-sign-in
-    font-size: $title-sign-in-font-size
     font-weight: bold
+    font-family: $font-bold
+    @media screen and (min-width: 451px)
+      font-size: $title-sign-in-font-size
+    @media screen and (max-width: 450px)
+      font-size: 26px
     &__position
-      margin-bottom: 9px
+      @media screen and (min-width: 451px)
+        margin-bottom: 9px
+      @media screen and (max-width: 450px)
+        margin-bottom: 3px
+
 
   .subtitle-sign-in
-    font-size: $subtitle-sign-in-font-size
     color: $subtitle-sign-in-color
+    @media screen and (min-width: 451px)
+      font-size: $subtitle-sign-in-font-size
+    @media screen and (max-width: 450px)
+      font-size: 20px
     &__position
-      margin-bottom: 24px
-
+      @media screen and (min-width: 451px)
+        margin-bottom: 24px
+      @media screen and (max-width: 450px)
+        margin-bottom: 27px
 
 
 

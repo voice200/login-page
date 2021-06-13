@@ -2,19 +2,20 @@ import React from 'react'
 
 export interface InputTypesProps {
   className: classesInput;
-  name: string,
-  label: string,
-  value: InputValue
-  type: InputType
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-  autoComplete: AutoCompleteType
+  name: string;
+  label: string;
+  value: InputValue;
+  type: InputType;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  autoComplete: AutoCompleteType;
+  needFocus?: boolean
 }
 export type InputValue = string | number
 
 export interface classesInput {
-  classInput: string | {}
-  classLabel: string | {}
-  classContainer : string | {}
+  classInput: string | {};
+  classLabel: string | {};
+  classContainer : string | {};
 }
 export enum AutoCompleteType {
   off = 'off',

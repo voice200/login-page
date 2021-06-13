@@ -107,7 +107,8 @@ const FormSignIn: FC<FormSignInProps> = () => {
           label={'Username'}
           type={InputType.text}
           autoComplete={AutoCompleteType.off}
-          { ...username } />
+          { ...username }
+          needFocus={true}/>
         <InputText
           className={classNameInputText}
           name={'password'}

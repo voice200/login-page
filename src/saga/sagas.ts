@@ -13,8 +13,7 @@ function* sendMessageResetWorker() {
     yield put(clearError())
     yield put(setLoading(true))
     // @ts-ignore
-    const result = yield call(server.resetPasswordTest(email))
-    return ()=>{new Promise(resolve => {resolve(result)})}
+    yield call(server.resetPasswordTest(email))
   }
   catch (e) {
     yield put(setLoading(false))
