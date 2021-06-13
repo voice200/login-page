@@ -18,9 +18,7 @@ export interface HandlerSubmit {
   handler: (e: React.FormEvent <HTMLButtonElement>) => void,
 }
 
-interface ButtonContent {
-  content: React.ReactNode | React.ReactChildren
-}
+type ButtonContent = React.ReactNode | React.ReactChildren
 
 export enum ButtonType {
   submit = 'submit',

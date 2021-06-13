@@ -20,6 +20,7 @@ const InputText: FC <InputTypesProps> = (
   const changeShowPassword = ():void =>{
     setShowPassword((state) => !state)
   }
+
   return (
     <div className={ cx(className.classContainer) }>
       <label htmlFor={name} className={ cx(className.classLabel) }>

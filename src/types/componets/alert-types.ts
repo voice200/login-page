@@ -4,5 +4,7 @@ export interface AlertTypesProps {
   confirm: boolean;
   title: string;
   children: ReactChildren | ReactNode;
-  changeShowAlert: () => void
+  changeShowAlert: () => void;
+  opened: boolean;
+  resetEmail?: () => void;
 }

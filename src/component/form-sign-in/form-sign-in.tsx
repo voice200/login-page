@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "./form-sign-in.sass";
 import { FormSignInProps } from "../../types/componets/form-sign-in-types";
 import Button from "../button";
@@ -13,19 +13,35 @@ import BorderBlock from "../border-block";
 import Row from "../row";
 import FooterItem from '../footer-item'
 import Alert from "../alert";
+import { useTypeSelector } from "../../hooks/useTypeSelector";
+import { useDispatch } from "react-redux";
+import { sendMessageEmailReset, setEmail, setUserName } from "../../actions";
 
 
 const FormSignIn: FC<FormSignInProps> = () => {
 
-  const username = useHandlerInput('')
-  const password = useHandlerInput('')
-  const resetEmail = useHandlerInput('')
+  const name = useTypeSelector(state => state.auth.userName)
+  const email = useTypeSelector(state => state.auth.email)
 
   const [showForgotPasswordAlert, setShowForgotPasswordAlert] = useState<boolean>(false)
+  const [showMessage, setShowMessage] = useState<boolean>(false)
+
+  const username = useHandlerInput(name, false)
+  const password = useHandlerInput('', false)
+  const resetEmail = useHandlerInput(email, showForgotPasswordAlert)
+
+  const dispatch = useDispatch()
 
   const handlerButton = () =>{
-
+      //handler for login
   }
+  useEffect(()=>{
+    dispatch(setUserName(username.value))
+  },[username.value, dispatch])
+
+  useEffect(()=>{
+    dispatch(setEmail(resetEmail.value))
+  },[resetEmail.value, dispatch])
 
   const classNameInput = cx('input-basic-sign-in', 'input-basic-sign-in_position')
   const classNameInputText = {
@@ -64,8 +80,18 @@ const FormSignIn: FC<FormSignInProps> = () => {
       return
     }
     setShowForgotPasswordAlert(state => !state)
+    dispatch(setEmail(''))
+  }
+  const changeMessage = () :void =>{
+    setShowMessage(state => !state)
+    dispatch(setEmail(''))
   }
 
+  const resetPassword = () =>{
+    dispatch(sendMessageEmailReset())
+    changeShowForgotPasswordAlert()
+    changeMessage()
+  }
   return (
     <div className='form-sign-in_container'>
       <div className={'form-sign-in_container_content'}>
@@ -106,9 +132,12 @@ const FormSignIn: FC<FormSignInProps> = () => {
           contentLeft={footerLeft}
           contentRight={footerRight} />
       </div>
-      {
-        showForgotPasswordAlert && (
-          <Alert confirm={true} title={'Password Reset'} changeShowAlert={()=>changeShowForgotPasswordAlert(false)}>
+          <Alert
+            opened={showForgotPasswordAlert}
+            confirm={true}
+            title={'Password Reset'}
+            changeShowAlert={()=>changeShowForgotPasswordAlert(false)}
+            resetEmail={resetPassword}>
             <div className={cx('alert_container_content')}>
               <div className={'alert_content'}>
                 Please enter the email address associated with your globaledit account to reset your password.
@@ -122,8 +151,17 @@ const FormSignIn: FC<FormSignInProps> = () => {
                 { ...resetEmail } />
             </div>
           </Alert>
-        )
-      }
+      <Alert
+        opened={showMessage}
+        confirm={false}
+        title={'Email Sent'}
+        changeShowAlert={changeMessage}>
+        <div className={cx('alert_container_content')}>
+          <div className={'alert_content'}>
+            Thank you, instructions to reset your password have been e-mailed to the address you provided!
+          </div>
+        </div>
+      </Alert>
     </div>
   )
 }
