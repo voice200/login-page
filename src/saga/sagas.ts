@@ -14,6 +14,7 @@ function* sendMessageResetWorker() {
     yield put(setLoading(true))
     // @ts-ignore
     yield call(server.resetPasswordTest(email))
+    yield put(setLoading(false))
   } catch (e) {
     yield put(setLoading(false))
     yield put(setError(e.message))
