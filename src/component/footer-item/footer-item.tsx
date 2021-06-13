@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 import cx from 'classnames'
 import './footer-item.sass'
-import {FooterItemTypesProps} from '../../types/componets/footer-item-types'
+import { FooterItemTypesProps } from '../../types/componets/footer-item-types'
 
-const FooterItem: FC<FooterItemTypesProps> = ({title, content, date}) => {
+const FooterItem: FC<FooterItemTypesProps> = ({ title, content, date }) => {
   return (
     <div className={cx('footer-item_container')}>
       <div className={cx('footer-item_title', 'footer-item_title__position')}>
@@ -19,4 +19,4 @@ const FooterItem: FC<FooterItemTypesProps> = ({title, content, date}) => {
   )
 }
 
-export default FooterItem;
+export default FooterItem

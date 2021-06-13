@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
 // @ts-ignore
-export const service = React.createContext();
+export const service = React.createContext()
 
-export const {Provider: ServiceProvider} = service
+export const { Provider: ServiceProvider } = service

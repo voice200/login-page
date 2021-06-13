@@ -1,3 +1,3 @@
-import InputText from "./input-text";
+import InputText from './input-text'
 
 export default InputText

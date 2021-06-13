@@ -1,2 +1,1 @@
-export interface FormSignInProps {
-}
+export interface FormSignInProps {}

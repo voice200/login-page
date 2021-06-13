@@ -1,31 +1,46 @@
-import { CommonActionTypes, SetLoadingAction, ClearErrorAction, SetErrorAction } from "../types/common-types";
-import {SetEmailAction, AuthActionTypes, SetUserNameAction, SendMessageEmailResetAction} from '../types/auth-types'
-import { ActionCreator } from "redux";
+import {
+  CommonActionTypes,
+  SetLoadingAction,
+  ClearErrorAction,
+  SetErrorAction,
+} from '../types/common-types'
+import {
+  SetEmailAction,
+  AuthActionTypes,
+  SetUserNameAction,
+  SendMessageEmailResetAction,
+} from '../types/auth-types'
+import { ActionCreator } from 'redux'
 
-export const setLoading: ActionCreator<SetLoadingAction> = (payload: boolean) =>({
+export const setLoading: ActionCreator<SetLoadingAction> = (
+  payload: boolean
+) => ({
   type: CommonActionTypes.SET_LOADING,
-  payload
+  payload,
 })
 
-export const setError: ActionCreator<SetErrorAction> = (payload: string) =>({
+export const setError: ActionCreator<SetErrorAction> = (payload: string) => ({
   type: CommonActionTypes.SET_ERROR,
-  payload
+  payload,
 })
 
-export const clearError: ActionCreator<ClearErrorAction> = () =>({
+export const clearError: ActionCreator<ClearErrorAction> = () => ({
   type: CommonActionTypes.CLEAR_ERROR,
 })
 
-export const setEmail: ActionCreator<SetEmailAction> = (payload: string) =>({
+export const setEmail: ActionCreator<SetEmailAction> = (payload: string) => ({
   type: AuthActionTypes.SET_EMAIL,
-  payload
+  payload,
 })
 
-export const setUserName: ActionCreator<SetUserNameAction> = (payload: string) =>({
+export const setUserName: ActionCreator<SetUserNameAction> = (
+  payload: string
+) => ({
   type: AuthActionTypes.SET_USER_NAME,
-  payload
+  payload,
 })
 
-export const sendMessageEmailReset: ActionCreator<SendMessageEmailResetAction> = () =>({
-  type: AuthActionTypes.SEND_MESSAGE_RESET
-})
+export const sendMessageEmailReset: ActionCreator<SendMessageEmailResetAction> =
+  () => ({
+    type: AuthActionTypes.SEND_MESSAGE_RESET,
+  })

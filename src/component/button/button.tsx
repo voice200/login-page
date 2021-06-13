@@ -1,22 +1,21 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 import './button.sass'
-import { ButtonTypesProps } from "../../types/componets/button-types";
+import { ButtonTypesProps } from '../../types/componets/button-types'
 import cx from 'classnames'
-import useHandlerButton from "../../hooks/useHandlerButton";
+import useHandlerButton from '../../hooks/useHandlerButton'
 
-const Button: FC <ButtonTypesProps> = ({ handlerEvent, title, className,}) =>{
-
+const Button: FC<ButtonTypesProps> = ({ handlerEvent, title, className }) => {
   const handler = useHandlerButton(handlerEvent)
 
   return (
     <button
-      type={ handlerEvent.type }
-      className={cx( className, 'button-basic-style') }
+      type={handlerEvent.type}
+      className={cx(className, 'button-basic-style')}
       {...handler}
     >
-      { title }
+      {title}
     </button>
   )
 }
 
-export default Button;
+export default Button

@@ -2,17 +2,20 @@ import { AuthAction, AuthState, AuthActionTypes } from '../types/auth-types'
 
 const initialState: AuthState = {
   userName: '',
-  email: ''
+  email: '',
 }
 
-export default function reducer (state = initialState, action: AuthAction) : AuthState {
+export default function reducer(
+  state = initialState,
+  action: AuthAction
+): AuthState {
   switch (action.type) {
     case AuthActionTypes.SET_EMAIL:
-     return {...state, email: action.payload}
+      return { ...state, email: action.payload }
     case AuthActionTypes.SET_USER_NAME:
-      return {...state, userName: action.payload}
+      return { ...state, userName: action.payload }
     case AuthActionTypes.SEND_MESSAGE_RESET:
-      return {...state}
+      return { ...state }
     default:
       return state
   }

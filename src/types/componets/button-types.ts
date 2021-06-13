@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react'
 
 export interface ButtonTypesProps {
-  title: ButtonContent | string;
-  className: string | object;
+  title: ButtonContent | string
+  className: string | object
   handlerEvent: HandlerEvent
 }
 
 export type HandlerEvent = HandlerClick | HandlerSubmit
 
 interface HandlerClick {
-  type: ButtonType.button | ButtonType.reset;
-  handler: (e: React.MouseEvent <HTMLButtonElement>) => void,
+  type: ButtonType.button | ButtonType.reset
+  handler: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export interface HandlerSubmit {
-  type: ButtonType.submit;
-  handler: (e: React.FormEvent <HTMLButtonElement>) => void,
+  type: ButtonType.submit
+  handler: (e: React.FormEvent<HTMLButtonElement>) => void
 }
 
 type ButtonContent = React.ReactNode | React.ReactChildren
@@ -23,5 +23,5 @@ type ButtonContent = React.ReactNode | React.ReactChildren
 export enum ButtonType {
   submit = 'submit',
   button = 'button',
-  reset = 'reset'
+  reset = 'reset',
 }

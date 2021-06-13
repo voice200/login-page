@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './error-boundry.sass'
 
-export default class ErrorBoundry extends Component <React.ComponentClass> {
+export default class ErrorBoundry extends Component<React.ComponentClass> {
   state = {
     hasErrors: false,
   }
@@ -14,7 +14,7 @@ export default class ErrorBoundry extends Component <React.ComponentClass> {
 
   render() {
     const { hasErrors } = this.state
-    const error = (<div> You catch error, sorry </div>)
+    const error = <div> You catch error, sorry </div>
 
     return hasErrors ? error : this.props.children
   }

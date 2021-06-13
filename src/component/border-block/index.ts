@@ -1,3 +1,3 @@
-import BorderBlock from "./border-block";
+import BorderBlock from './border-block'
 
 export default BorderBlock
